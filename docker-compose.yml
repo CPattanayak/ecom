@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  customer:
+    build: ./customerserv
+    ports:
+      - "8080:8080"
+  order:
+    build: ./orderserv
+    ports:
+      - "8081:8081"
