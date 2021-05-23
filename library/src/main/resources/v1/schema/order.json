@@ -1,0 +1,56 @@
+{
+  "title": "Order resource",
+  "description": "Order resource object",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "order id",
+      "type": "integer"
+    },
+    "customerId": {
+      "description": "customer id",
+      "type": "string"
+    },
+    "dateOfPurchase": {
+      "description": "date of purchase",
+      "type": "string"
+    },
+	"status": {
+	  "description": "status of order",
+	  "type": "string"
+     
+      },
+	"lineitems":{
+	   "type": "array",
+	   "items": {
+	    "type": "object",
+		"properties":{
+		  "id":{
+		   "description": "line item id",
+		   "type":"integer"
+		  },
+		  
+		  "itemId":{
+		   "description": "item id",
+		   "type":"string"
+		  },
+		  "qty":{
+		    "description":"Quantity",
+			"type":"integer"
+		  },
+		  "price":{
+		    "description":"Price",
+			"type":"integer"
+		  }
+					  
+		}
+		
+	   }
+	},
+	
+	
+  "required": [
+    "customerId"
+  ]
+}
+}
