@@ -15,6 +15,33 @@ server:
   email: default@mkyong.com
 
 ---
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      register-health-indicator: true
+      sliding-window-size: 10
+      sliding-window-type: COUNT_BASED
+      minimum-number-of-calls: 5
+      writable-stack-trace-enabled: true     
+      permitted-number-of-calls-in-half-open-state: 2
+      automatic-transition-from-open-to-half-open-enabled: true
+      wait-duration-in-open-state: 10s
+      failure-rate-threshold: 50
+  instances:
+    backendA:
+      baseConfig: default
+
+    backendB:
+      register-health-indicator: true
+      sliding-window-size: 10
+      sliding-window-type: COUNT_BASED
+      minimum-number-of-calls: 5
+      writable-stack-trace-enabled: true     
+      permitted-number-of-calls-in-half-open-state: 2
+      automatic-transition-from-open-to-half-open-enabled: true
+      wait-duration-in-open-state: 10s
+      failure-rate-threshold: 50
+
 spring:
   profiles: dev
   cloud:
@@ -24,6 +51,13 @@ spring:
         uri: http://localhost:8084/
         predicates:
         - Path=/order/**
+        filters:
+          name: CircuitBreaker
+          args:
+            name: backendA
+            fallbackUri: 'forward:/fallback'
+            statusCodes:
+              - 404
        
       - id: customer_route
         uri: http://localhost:8083/

@@ -36,6 +36,12 @@ public class OrderController implements OrderResource {
 	@Override
 	public ResponseEntity<Order> employeeGetById(String id) {
 		// TODO Auto-generated method stub
+		try {
+			Thread.sleep(1000l);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Optional<OrderDao> customer = repo.findById(Integer.valueOf(id));
     	if (!customer.isPresent())
     	      throw new OrderNotFoundException("id-" + id);;
