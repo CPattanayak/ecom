@@ -11,6 +11,7 @@
   	<module>library</module>
   	<module>customerserv</module>
   	<module>orderserv</module>
+  	<module>gateway</module>
   </modules>
   <properties>
     <maven.compiler.source>1.7</maven.compiler.source>

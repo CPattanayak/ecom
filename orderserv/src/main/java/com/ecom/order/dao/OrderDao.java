@@ -23,6 +23,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+//@NamedEntityGraph(name = "Order.lineitems",
+//    attributeNodes = @NamedAttributeNode("lineitems")
+//)
+ //@EntityGraph(value = "Item.characteristics")
 public class OrderDao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -37,6 +41,7 @@ public class OrderDao {
 	        updatable = false
 	)
 	private Date dateOfPurchase;
+	 //@OneToMany(mappedBy = "teacher",fetch = FetchType.EAGER)
 	 @OneToMany(cascade = CascadeType.PERSIST)
 	 @JoinColumn(name = "order_id")
     private List<LineitemDao> lineitems;

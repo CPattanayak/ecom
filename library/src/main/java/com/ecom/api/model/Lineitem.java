@@ -3,7 +3,7 @@ package com.ecom.api.model;
 
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
+import javax.annotation.processing.Generated;
 import javax.validation.Valid;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;

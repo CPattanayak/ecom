@@ -3,7 +3,7 @@ package com.ecom.api.model;
 
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
+import javax.annotation.processing.Generated;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
