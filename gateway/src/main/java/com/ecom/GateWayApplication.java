@@ -7,9 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //@ComponentScan(basePackages = "com.ecom", excludeFilters = @Filter(SpringBootApplication.class)) 
 @SpringBootApplication
 
-public class DemoApplication {
+public class GateWayApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(GateWayApplication.class, args);
 	}
 
 }
